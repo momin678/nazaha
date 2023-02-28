@@ -97,6 +97,11 @@
                                     </li>
                                 @endcan
                             @endif
+                            <li class="aiz-side-nav-item">
+                                <a href="{{route('products.best-collections')}}" class="aiz-side-nav-link">
+                                    <span class="aiz-side-nav-text">{{ translate('Best Collections') }}</span>
+                                </a>
+                            </li>
                             @can('show_digital_products')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{route('digitalproducts.index')}}" class="aiz-side-nav-link {{ areActiveRoutes(['digitalproducts.index', 'digitalproducts.create', 'digitalproducts.edit']) }}">

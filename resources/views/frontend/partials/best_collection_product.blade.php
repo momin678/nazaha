@@ -1,5 +1,5 @@
 @if(count($section) > 0)
-<section class="mb-4 mt-4"id="best_collection">
+<section class="mb-4 mt-4">
     <div class="container">
         <div class="gutters-10">
             <div class="col-lg-12 mbl-nopadding">

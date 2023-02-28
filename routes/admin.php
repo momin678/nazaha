@@ -45,6 +45,7 @@ use App\Http\Controllers\TaxController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\ZoneController;
+use App\Http\Controllers\BestCollectionController;
 
 /*
   |--------------------------------------------------------------------------
@@ -482,4 +483,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     Route::get('/clear-cache', [AdminController::class, 'clearCache'])->name('cache.clear');
 
     Route::get('/admin-permissions', [RoleController::class, 'create_admin_permissions']);
+    // best collection route start
+    Route::controller(BestCollectionController::class)->group(function () {
+        Route::get('/products/best-collections', 'best_collections')->name('products.best-collections');
+        Route::post('/products/collection.store', 'collection_create')->name('collection.store');
+        Route::get('/products/collection.edit/{id}', 'collection_edit')->name('collection.edit');
+        Route::post('/products/collection.update/{id}', 'collection_update')->name('collection.update');
+        Route::get('/products/collection.destroy/{id}', 'collection_destroy')->name('collection.destroy');
+        Route::post('/products/collection..section.update/{id}', 'collection_product_update')->name('collection.section.update');
+    });
+    // best collection route end
 });
